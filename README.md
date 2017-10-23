@@ -1,9 +1,34 @@
 # CO7X17-17-18
 
-This repository is for each student to submit assessed coursework.
+Repository with learning resources for Agile Cloud Automation (CO7217 and CO7517)
 
-By using this repository, I acknowledge that:
-* I have signed the [declaration of academic honesty](https://campus.cs.le.ac.uk/ForStudents/plagiarism/DoAIF.pdf) - if you signed this form last year, you don't need to do it again;
-* the assessed components of this module correspond to individual assessment;
-* that the solution provided for the mini project is the result of my sole individual work.
+## Study guide and schedule
+
+Please access the information on Blackboard.
+
+The schedule of the sessions can be found [on this Google calendar](https://calendar.google.com/calendar/embed?src=uf9eg8fvqd5kdk0ge4r44qh4vg%40group.calendar.google.com&ctz=Europe/London).
+
+## Exercises and assessed coursework
+
+Outline of assessed coursework:
+
+| assessed component | type | marks | weight | deadline |
+|--|--|--|--|--|
+| miniproject 1 | | 100 | 30% | 3/11/2017 (9:00am) |
+| | programming | 60 | | |
+| | essay/open problem which may involve the application of modelling techniques | 40 | | | 
+| test (multiple choice questions, true/false questions) | | 100 | 40% | 23/11/2017 |
+| miniproject 2 | | 100 | 30% | 14/12/2017 (9:00am) |
+| | programming | 60 | | |
+| | essay/open problem which may involve the application of modelling techniques | 40 | | | 
+
+Worksheets for formative and assessed coursework:
+
+* [Part I: Agile practices and NoSQL](https://github.com/uol-inf/CO7X17-17-18/tree/master/partI)
+* [Part II: Cloud Automation using Model-Driven Engineering](https://github.com/uol-inf/CO7X17-17-18/tree/master/partII)
+
+## Tooling and GitHub setup
+
+* [Tooling](./tooling.md)
+
 
