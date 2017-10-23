@@ -7,11 +7,11 @@ import com.mongodb.MongoURI
 class MongoDB {
 
 	// EDIT THE FOLLOWING PARAMETERS
-def USERNAME = 'AlHasan'
-def PWD = 'Rama4815_'
-def HOST = 'ds121575.mlab.com'
-def PORT = 21575
-def DATABASE = 'alhasan'
+	def USERNAME = 'AlHasan'
+	def PWD = 'Rama4815_'
+	def HOST = 'ds121575.mlab.com'
+	def PORT = 21575
+	def DATABASE = 'alhasan'
 	
 	public DB db
 	

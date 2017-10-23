@@ -26,5 +26,5 @@
 twurl authorize --consumer-key w3J1fPGElVJBQ9bDiAlxYJKX1 --consumer-secret N6idqgZxFrdrIwyQwWau4hO8WINGEq4k98VlNwk1MFlurEmxk5
 twurl -H "https://api.twitter.com" "/1.1/friends/list.json?count=$1" | jq . > friends.json
 twurl -H "https://api.twitter.com" "/1.1/followers/list.json?count=$1" | jq . > followers.json
-//./twitterFetchUserTweets.groovy $1 | jq . > tweets.json
-//./gradlew migrateToMongoDb
+./twitterFetchUserTweets.groovy $1 | jq . > tweets.json
+./gradlew migrateToMongoDb

@@ -7,11 +7,11 @@ import com.mongodb.MongoURI
 
 
 // EDIT THE FOLLOWING PARAMETERS
-def USERNAME = 'AlHasan'
-def PWD = 'Rama4815_'
-def HOST = 'ds121575.mlab.com'
-def PORT = 21575
-def DATABASE = 'alhasan'
+def USERNAME = 'username'
+def PWD = 'password'
+def HOST = 'ds033754.mlab.com'
+def PORT = 33754
+def DATABASE = 'database'
 
 
 // MAKING THE CONNECTION
