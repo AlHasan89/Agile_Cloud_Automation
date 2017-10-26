@@ -17,16 +17,6 @@ class BulkTransfer {
 		
 		// TODO Exercise 1
 		
-		println 'databasde: ' + mongo.db.getName()
-		mongo.db.getCollectionNames().each{ println it }
-		
-		mongo.db.Followers.find('tweet.entities.user_mentions.screen_name': "martinfowler").each{ println it }
-		
-		
-		/*
-		
-		
-		
 		friends.users.forEach{ freind ->
 			def tweet = tweets.findAll({ tweet ->
 				(tweet.user != null) && (tweet.user.id == freind.id)
@@ -409,8 +399,7 @@ class BulkTransfer {
 				mongo.db.Followers << doct
 		}
 	
-		*/
-		
 		//end::exercise[]
+		  
 	}
 }

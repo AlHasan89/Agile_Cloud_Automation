@@ -35,21 +35,42 @@ public class IndexController {
 		
 		// TODO Exercise 2
 		
-		
+		followedFollowers = mongo.db.Followers.find('tweet.entities.user_mentions.screen_name': "martinfowler")
 		
 		//end::exercise[]
 		
 		model.addAttribute("followers", followedFollowers);
 		return "followers";
 	}
-
+	
+	
+	
 	@RequestMapping(value="friends",method=RequestMethod.GET)
     public String friends(Model model) {
 		List<FriendDto> friends = new ArrayList<FriendDto>()
-        
+		def slurper = new groovy.json.JsonSlurper()
 		// tag::exercise[]
 		
 		// TODO Exercise 3
+		
+		mongo.db.Friends.find().each{ friend ->
+			FriendDto dto = new FriendDto()
+			dto.name=friend.name
+			dto.description=friend.description
+			dto.noTweets = friend.tweet.size()
+			
+			def tweets = slurper.parseText(new File("./src/main/resources/twitter/tweets.json").text)
+			def userTweets = tweets.findAll({ tweet ->
+				(tweet.user != null) && (tweet.user.id.toLong() == friend.id.toLong())
+			})
+			dto.noRetweets = 0
+			for (t in userTweets) {
+				dto.noRetweets += t.retweet_count
+				if (t.retweet_count >= 100)
+				dto.noActiveTweets++
+			}
+			friends.add(dto)
+		}
 		
 		//end::exercise[]
 		
