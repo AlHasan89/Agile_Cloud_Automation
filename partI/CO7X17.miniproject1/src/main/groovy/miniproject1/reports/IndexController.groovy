@@ -35,6 +35,8 @@ public class IndexController {
 		
 		// TODO Exercise 2
 		
+		
+		
 		//end::exercise[]
 		
 		model.addAttribute("followers", followedFollowers);

@@ -19,9 +19,9 @@
 #	will be filtered and copied onto your MongoDB database on mLab 
 # 	
 #
-[ -e "./friends.json" ] && rm "./friends.json"
-[ -e "./followers.json" ] && rm "./followers.json"
-[ -e "./tweets.json" ] && rm "./tweets.json"
+[ -e "./src.main/resources/twitter/friends.json" ] && rm "./friends.json"
+[ -e "./src.main/resources/twitter/followers.json" ] && rm "./followers.json"
+[ -e "./src.main/resources/twitter/tweets.json" ] && rm "./tweets.json"
 
 twurl authorize --consumer-key w3J1fPGElVJBQ9bDiAlxYJKX1 --consumer-secret N6idqgZxFrdrIwyQwWau4hO8WINGEq4k98VlNwk1MFlurEmxk5
 twurl -H "https://api.twitter.com" "/1.1/friends/list.json?count=$1" | jq . > friends.json
