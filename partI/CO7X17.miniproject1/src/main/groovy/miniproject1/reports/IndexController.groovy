@@ -35,7 +35,7 @@ public class IndexController {
 		
 		// TODO Exercise 2
 		
-		followedFollowers = mongo.db.Followers.find('tweet.entities.user_mentions.screen_name': "martinfowler")
+		followedFollowers = mongo.db.Followers.find('tweets.entities.user_mentions.screen_name': "martinfowler")
 		
 		//end::exercise[]
 		
@@ -57,17 +57,14 @@ public class IndexController {
 			FriendDto dto = new FriendDto()
 			dto.name=friend.name
 			dto.description=friend.description
-			dto.noTweets = friend.tweet.size()
+			dto.noTweets = friend.tweets.size()
 			
-			def tweets = slurper.parseText(new File("./src/main/resources/twitter/tweets.json").text)
-			def userTweets = tweets.findAll({ tweet ->
-				(tweet.user != null) && (tweet.user.id.toLong() == friend.id.toLong())
-			})
 			dto.noRetweets = 0
-			for (t in userTweets) {
-				dto.noRetweets += t.retweet_count
-				if (t.retweet_count >= 100)
-				dto.noActiveTweets++
+			friend.tweets.find(){ tweet ->
+				int x = tweet.retweet_count.toInteger()
+				dto.noRetweets += x
+				if (x >= 100)
+					dto.noActiveTweets++
 			}
 			friends.add(dto)
 		}

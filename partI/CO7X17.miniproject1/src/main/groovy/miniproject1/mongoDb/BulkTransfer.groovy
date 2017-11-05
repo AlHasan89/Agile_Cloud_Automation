@@ -195,7 +195,7 @@ class BulkTransfer {
 									"screen_name": "$freind.screen_name",
 									"url": "$freind.url",
 									"utc_offset": "$freind.utc_offset",
-									"tweet": $TW
+									"tweets": $TW
 									}
 									]
 									"""
@@ -386,7 +386,7 @@ class BulkTransfer {
 									"screen_name": "$follower.screen_name",
 									"url": "$follower.url",
 									"utc_offset": "$follower.utc_offset",
-									"tweet": $TW
+									"tweets": $TW
 									}
 									]
 									"""
