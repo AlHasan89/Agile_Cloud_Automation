@@ -1,1 +1,0 @@
-# Part II: Cloud Automation using Model-Driven Engineering
