@@ -1,0 +1,9 @@
+query tweetHashTags () {
+	tweets {
+		entities {
+			hashtags {
+				text
+			}
+		}
+	}
+}

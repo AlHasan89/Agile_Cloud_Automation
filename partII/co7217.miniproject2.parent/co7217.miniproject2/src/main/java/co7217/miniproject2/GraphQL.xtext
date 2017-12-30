@@ -1,0 +1,39 @@
+grammar co7217.miniproject2.GraphQL with org.eclipse.xtext.common.Terminals
+ 
+ generate graphQL "http://www.miniproject2.co7217/GraphQL"
+ 
+ GraphQL:
+ 	(elements += AbstractElement)*
+ 	;
+ 	
+AbstractElement:
+	Type | Query
+;
+ 
+ Query:
+ 	'query' name=ID '(' ')' '{'
+ 		(queryField+=QueryField)+
+ 	'}'
+ ;
+ 
+ QueryField:
+ 	name=ID ('{' (nestedQuery+=QueryField)+ '}')?
+ ;
+ 
+ Type:
+ 	Scalar | Typo
+ ;
+ 
+ Typo:
+	'type' name=ID '{' (features += Feature)+ '}'	
+ ;
+ 
+ Feature:
+ 	name = ID ':' type = [Type] ('!')? | name = ID ':' '[' type = [Type] ('!')? ']' ('!')?
+ ;
+ 
+ Scalar:
+ 	'scalar' name=ID
+ ;
+ 
+ 

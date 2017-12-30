@@ -1,0 +1,8 @@
+query tweetTextAndUsers () {
+	tweets {
+		text 
+		user {
+			name 
+		}
+	}
+}

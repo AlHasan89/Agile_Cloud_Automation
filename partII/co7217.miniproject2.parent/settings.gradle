@@ -1,0 +1,3 @@
+include 'co7217.miniproject2'
+include 'co7217.miniproject2.ide'
+include 'co7217.miniproject2.web'

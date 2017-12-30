@@ -1,0 +1,59 @@
+package miniproject2.generatedScripts
+
+import com.gmongo.GMongo
+import com.mongodb.DBCursor
+import com.mongodb.MongoURI
+
+import miniproject2.mongoDb.Credentials
+
+// EDIT THE FOLLOWING PARAMETERS
+def USERNAME = 'AlHasan89'
+def PWD = 'Rama4815_'
+def HOST = 'ds231987.mlab.com'
+def PORT = 31987
+def DATABASE = 'co7217-17-18-miniproject2\
+
+
+// MAKING THE CONNECTION
+def connectionString = new MongoURI("mongodb://${USERNAME}:${PWD}@${HOST}:${PORT}/${DATABASE}")
+def mongo = new GMongo(connectionString)
+
+def db = mongo.getDB(DATABASE)
+
+def followers = db.followers.find()
+def result = '['
+
+	
+// remove the comma if it is the last element
+result = result - ~/,$/
+result += ']'
+println result 
+   
+followers.each{
+	 	def result2 = ''
+	 	if ((it.containsKey("tweets")) && (it.tweets)) {
+	 		it.tweets.each{
+	 			def result3 = ''
+	 			if (it.containsKey("text") && (it.text)) {
+	 				result3 += """${groovy.json.JsonOutput.toJson(it.text)}"""
+	 				if (result3 != '') {
+	 					result2 += """
+				 		 			{
+				 		 			\"text\": $result3
+				 		 			},"""
+	 				}
+	 			}
+	 		}
+	 	}
+	 	// remove the comma if it is the last element
+	 	result2 = result2 - ~/,$/
+	 
+	 	if (result2 != '') {
+	 		result += """
+	 {
+	   \"tweets\": [
+	 	$result2
+	   ]
+	 },"""
+	 	}
+	 }
