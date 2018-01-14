@@ -2,7 +2,6 @@
 <project-modules id="moduleCoreId" project-version="2.0">
 	<wb-module deploy-name="co7217.miniproject2.web">
 		<property name="context-root" value="co7217.miniproject2.web"/>
-		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/xtext-gen"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/xtend-gen"/>

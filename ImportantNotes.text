@@ -1,0 +1,4 @@
+- In the second exercise: Model-to-Text where we should make the configuration to execute Groovy scripts in the file "build.gradle" you asked us to add the following in the dependencies: compile "org.codehaus.groovy:groovy-all:2.6" 
+but this one displayed so many errors on my work, so i replaced it with: compile "org.codehaus.groovy:groovy-all:2.4.7"
+
+- In Groovy scripts you asked us to add the generated groovy file to package using "package miniproject2.generatedScripts" in the begining of the file. I removed that line because it made some errors, so you can find my generated groovy scripts in the same folder you mentioned "co7217.miniproject2.parent/co7217.miniproject2/src/main/xtend-gen" but in (default package)
